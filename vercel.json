@@ -20,12 +20,12 @@
         "LOG_LEVEL": "debug",
 
         "DB_CONNECTION": "mysql",
-        "DB_HOST": "127.0.0.1",
+        "DB_HOST": "sql5.freesqldatabase.com",
         "DB_PORT": "3306",
-        "DB_DATABASE": "id21693259_laravel",
-        "DB_USERNAME": "id21693259_root",
-        "DB_PASSWORD": "Ahmedsultan123.",
-
+        "DB_DATABASE": "sql5671699",
+        "DB_USERNAME": "sql5671699",
+        "DB_PASSWORD": "wtFWZSpLxJ",
+        
         "BROADCAST_DRIVER": "log",
         "CACHE_DRIVER": "file",
         "FILESYSTEM_DISK": "local",
