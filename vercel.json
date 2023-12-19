@@ -13,7 +13,7 @@
         "APP_ENV": "production",
         "APP_KEY": "base64:OwGwMEaUseehtprcbi7KB6waGL0CI57xP92k8qO9fhY=",
         "APP_DEBUG": "false",
-        "APP_URL": "lovejoys-5g4e-muhammadhur2s-projects.vercel.app",
+        "APP_URL": "https://lovejoys-5g4e-1khrqmyr4-muhammadhur2s-projects.vercel.app/",
 
         "LOG_CHANNEL": "stack",
         "LOG_DEPRECATIONS_CHANNEL": "null",
