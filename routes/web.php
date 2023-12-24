@@ -38,7 +38,7 @@ Route::get('/dashboard', function () {
     \Log::debug('Requests: ', $requests->toArray());
 
     return view('dashboard', compact('requests'));
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard'); //->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::get('/otp-verify', function () {
