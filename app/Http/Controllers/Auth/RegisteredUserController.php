@@ -42,14 +42,18 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'contact_number' => $request->contact_number,
+            // Set the email_verified_at field for bypassing email verification
+            'email_verified_at' => now(), // or a specific date in 2023, e.g., '2023-01-01 00:00:00'
         ]);
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         Auth::login($user);
 
+        return redirect(RouteServiceProvider::HOME);
+
         // Redirect to verify-email route
-        $redirect = redirect('/verify-email')->with('success', 'Account created successfully. Please verify your email.');
-        return $redirect;
+        // $redirect = redirect('/verify-email')->with('success', 'Account created successfully. Please verify your email.');
+        // return $redirect;
     }
 }
