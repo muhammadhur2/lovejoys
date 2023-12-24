@@ -21,6 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/debug-key', function () {
+    Log::info(env('APP_KEY'));
+    return 'Logged the key!';
+});
+
 Route::get('/dashboard', function () {
     // Get the ID of the currently authenticated user
     $userId = Auth::id();
