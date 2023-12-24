@@ -40,6 +40,9 @@ Route::get('/dashboard', function () {
     return view('dashboard', compact('requests'));
 })->middleware(['auth'])->name('dashboard'); //->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
 
 Route::get('/otp-verify', function () {
     return view('auth.verify-otp');
