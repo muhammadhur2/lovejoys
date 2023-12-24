@@ -20,11 +20,11 @@
         "LOG_LEVEL": "debug",
 
         "DB_CONNECTION": "mysql",
-        "DB_HOST": "sql5.freesqldatabase.com",
-        "DB_PORT": "3306",
-        "DB_DATABASE": "sql5671699",
-        "DB_USERNAME": "sql5671699",
-        "DB_PASSWORD": "wtFWZSpLxJ",
+        "DB_HOST": "roundhouse.proxy.rlwy.net",
+        "DB_PORT": "49231",
+        "DB_DATABASE": "railway",
+        "DB_USERNAME": "root",
+        "DB_PASSWORD": "D3ggdcCdDDHAcecHa2-45Fd3h3fhGD2a",
         
         "BROADCAST_DRIVER": "log",
         "CACHE_DRIVER": "file",
