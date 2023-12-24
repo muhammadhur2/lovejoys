@@ -8,6 +8,9 @@
         { "src": "/build/(.*)", "dest": "/build/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
+    "scripts": {
+        "build": "php artisan storage:link"
+    },
     "env": {
         "APP_NAME": "Laravel",
         "APP_ENV": "production",
