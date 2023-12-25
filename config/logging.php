@@ -54,7 +54,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['single', 'mail'],
             'ignore_exceptions' => false,
         ],
 
@@ -126,6 +126,15 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'mail' => [
+            'driver' => 'monolog',
+            'handler' => Illuminate\Log\EmailHandler::class,
+            'to' => 'muhammedhur@gmail.com',
+            'from' => env('MAIL_FROM_ADDRESS', 'adhdestinies@gmail.com'),
+            'level' => 'error',  // Set the minimum log level for emails
+        ],
+        
     ],
 
 ];
