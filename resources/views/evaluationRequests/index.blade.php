@@ -9,9 +9,10 @@
                 <div style="background-color: lightgrey;" class="dark:bg-gray-800 shadow-lg p-4 rounded-lg">
                     <div class="flex items-center justify-between">
                         <div class="w-1/3">
-                            @if ($request->image)
-                                <img src="{{ Storage::url($request->image) }}" alt="Uploaded Image" class="max-w-full max-h-full rounded-lg">
-                            @endif
+                        @if ($request->image)
+                             <img src="data:image/jpeg;base64,{{ $request->image }}" alt="Uploaded Image">
+                        @endif
+
                         </div>
                         <div class="w-2/3 ml-4">
                             <p class="text-gray-600 dark:text-gray-200 font-bold">{{ $request->comment }}</p>

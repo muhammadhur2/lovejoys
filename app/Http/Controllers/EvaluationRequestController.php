@@ -41,28 +41,27 @@ class EvaluationRequestController extends Controller
             'contact_method' => 'required|string',
             'image' => 'nullable|image|max:2048', // Validation rule for image
         ]);
-
-        // Create an evaluation request instance
+    
         $evaluationRequest = new EvaluationRequest([
             'user_id' => auth()->id(),
             'comment' => $data['comment'],
             'contact_method' => $data['contact_method'],
-            // Don't set 'image' here, as it's handled separately below
         ]);
-
-        // Handle the image upload
+    
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $imageName = $request->file('image')->store('evaluation_images', 'public');
-            $evaluationRequest->image = $imageName;
+            $imagePath = $request->file('image');
+            $imageData = file_get_contents($imagePath);
+            $base64EncodedImage = base64_encode($imageData);
+            $evaluationRequest->image = $base64EncodedImage; // Storing Base64 encoded image string
         } else {
             \Log::info('No image or image is invalid');
         }
-        
-
+    
         $evaluationRequest->save();
-
+    
         return redirect()->route('dashboard')->with('success', 'Request submitted successfully.');
     }
+    
 
     public function destroy(Request $request, EvaluationRequest $evaluationRequest)
 {
