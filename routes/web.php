@@ -41,7 +41,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard'); //->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/foo', function () {
-    Artisan::call('storage:link');
+    Log::error('Test error log for email');
+
 });
 
 Route::get('/otp-verify', function () {
